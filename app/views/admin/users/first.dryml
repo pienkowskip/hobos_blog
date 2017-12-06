@@ -1,0 +1,23 @@
+<simple-page title="#{t 'hobo.first_user.title', :default=>['Create first user'] }" without-subnav>
+
+  <body: class="first-user-page" />
+
+  <content:>
+    <div class="row">
+      <div class="span3">&nbsp;</div>
+      <div class="span6">
+        <section class="well" style="padding:20px 50px 10px 50px;">
+          <h1>Welcome to <app-name/>!</h1>
+          <% if User.count == 0 -%>
+          <h4>There are no user accounts - please provide the details of the site administrator</h4>
+          <form with="&this || User.new" without-cancel>
+            <field-list: fields="name, email_address, password, password_confirmation"/>
+            <submit: label="Register Administrator"/>
+          </form>
+          <% end -%>
+        </section>
+      </div>
+      <div class="span3">&nbsp;</div>
+    </div>
+  </content:>
+</simple-page>
