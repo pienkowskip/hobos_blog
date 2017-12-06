@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  get ENV['RAILS_RELATIVE_URL_ROOT'] => 'front#index' if ENV['RAILS_RELATIVE_URL_ROOT']
-  root :to => 'front#index'
+  root to: 'front/static#home'
 
   namespace :admin do
     root to: 'admin_site#index'
@@ -23,16 +22,17 @@ Rails.application.routes.draw do
   end
 
   scope :admin do
-    get 'users/:id/account(.:format)' => 'admin/users#account', :as => 'account_user'
-    post 'login(.:format)' => 'admin/users#login', :as => 'user_login_post'
-    get 'login(.:format)' => 'admin/users#login', :as => 'user_login'
-    get 'logout(.:format)' => 'admin/users#logout', :as => 'user_logout'
-    get 'forgot_password(.:format)' => 'admin/users#forgot_password', :as => 'user_forgot_password'
-    post 'forgot_password(.:format)' => 'admin/users#forgot_password', :as => 'user_forgot_password_post'
+    get 'users/:id/account' => 'admin/users#account', :as => 'account_user'
+    post 'login' => 'admin/users#login', :as => 'user_login_post'
+    get 'login' => 'admin/users#login', :as => 'user_login'
+    get 'logout' => 'admin/users#logout', :as => 'user_logout'
+    get 'forgot_password' => 'admin/users#forgot_password', :as => 'user_forgot_password'
+    post 'forgot_password' => 'admin/users#forgot_password', :as => 'user_forgot_password_post'
   end
 
-  post 'search' => 'front#search', :as => 'site_search_post'
-  get 'search' => 'front#search', :as => 'site_search'
+  scope module: 'front' do
+    get 'home' => 'static#home', as: 'home_page'
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
