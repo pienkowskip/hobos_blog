@@ -22,3 +22,18 @@
     <append-header:><%= h this.state.titleize %></append-header:>
   </old-card>
 </extend>
+
+<extend tag="form" for="Post">
+<old-form merge>
+  <field-list: replace>
+    <div class="row columns">
+      <div class="span9"><single-field-list fields="title"/></div>
+      <div class="span9"><single-field-list fields="category"/></div>
+      <div class="span9"><single-field-list fields="published_at"/></div>
+      <div class="span9"><single-field-list fields="author"/></div>
+      <div class="span9"><single-field-list fields="excerpt"/></div>
+      <div class="span9"><single-field-list fields="body"/></div>
+    </div>
+  </field-list:>
+</old-form>
+</extend>

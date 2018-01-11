@@ -1,0 +1,4 @@
+<index-page>
+  <collection: fields="this, category, state, published_at, author, actions">
+  </collection:>
+</index-page>

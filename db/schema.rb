@@ -11,7 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171129120635) do
+ActiveRecord::Schema.define(version: 20180110183736) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name", null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string   "title",                          null: false
+    t.string   "state",        default: "draft", null: false
+    t.datetime "published_at"
+    t.text     "body",                           null: false
+    t.text     "excerpt"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "author_id"
+    t.integer  "category_id"
+  end
+
+  add_index "posts", ["author_id"], name: "index_posts_on_author_id"
+  add_index "posts", ["category_id"], name: "index_posts_on_category_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "crypted_password",          limit: 40

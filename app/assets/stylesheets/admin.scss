@@ -13,3 +13,7 @@
  *= require jquery-ui/redmond
  *= require_tree ./admin
 */
+
+select.datetime {
+  width: 5em !important;
+}
