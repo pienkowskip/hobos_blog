@@ -1,0 +1,4 @@
+<index-page>
+  <collection: fields="this, asset_content_type, asset_file_size, asset_updated_at, actions">
+  </collection:>
+</index-page>

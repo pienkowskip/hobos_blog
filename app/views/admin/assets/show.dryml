@@ -1,0 +1,7 @@
+<show-page for="Asset">
+  <prepend-content-body:><%=
+    link_to(this.asset.url) do
+      (this.asset.exists?(:medium) ? image_tag(this.asset.url(:medium)) : this.asset_file_name)
+    end
+  %></prepend-content-body:>
+</show-page>

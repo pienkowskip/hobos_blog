@@ -24,3 +24,6 @@ config/hobo_routes.rb
 # configs
 /config/secrets.yml
 /config/database.yml
+
+# uploaded assets
+/public/files/*

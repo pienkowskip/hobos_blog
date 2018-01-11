@@ -10,12 +10,13 @@
 
 <include gem='hobo_bootstrap_ui'/>
 
+<include gem='hobo_paperclip'/>
+
 <include src="taglibs/auto/admin/rapid/cards"/>
 <include src="taglibs/auto/admin/rapid/pages"/>
 <include src="taglibs/auto/admin/rapid/forms"/>
 
 <include src="application"/>
-
 
 <extend tag="card" for="User">
   <old-card merge>
@@ -36,4 +37,10 @@
     </div>
   </field-list:>
 </old-form>
+</extend>
+
+<extend tag="form" for="Asset">
+  <old-form merge multipart>
+    <field-list: fields="asset"/>
+  </old-form>
 </extend>
