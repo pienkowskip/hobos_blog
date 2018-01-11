@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180111123204) do
+ActiveRecord::Schema.define(version: 20180111154950) do
 
   create_table "assets", force: :cascade do |t|
     t.string   "asset_file_name"
@@ -22,9 +22,14 @@ ActiveRecord::Schema.define(version: 20180111123204) do
     t.datetime "updated_at"
   end
 
+  add_index "assets", ["asset_updated_at"], name: "default_ordering_index_on_assets"
+  add_index "assets", ["asset_updated_at"], name: "index_assets_on_asset_updated_at"
+
   create_table "categories", force: :cascade do |t|
     t.string "name", null: false
   end
+
+  add_index "categories", ["name"], name: "default_ordering_index_on_categories"
 
   create_table "posts", force: :cascade do |t|
     t.string   "title",                          null: false
@@ -40,6 +45,7 @@ ActiveRecord::Schema.define(version: 20180111123204) do
 
   add_index "posts", ["author_id"], name: "index_posts_on_author_id"
   add_index "posts", ["category_id"], name: "index_posts_on_category_id"
+  add_index "posts", ["created_at"], name: "default_ordering_index_on_posts"
 
   create_table "users", force: :cascade do |t|
     t.string   "crypted_password",          limit: 40
@@ -55,6 +61,7 @@ ActiveRecord::Schema.define(version: 20180111123204) do
     t.datetime "key_timestamp"
   end
 
+  add_index "users", ["name"], name: "default_ordering_index_on_users"
   add_index "users", ["state"], name: "index_users_on_state"
 
 end

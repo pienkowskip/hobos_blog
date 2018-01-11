@@ -10,6 +10,8 @@ class Category < ActiveRecord::Base
   has_many :posts, dependent: :restrict_with_exception, inverse_of: :category
   children :posts
 
+  default_scope -> { order(name: :asc) }
+
   # --- Permissions --- #
 
   def create_permitted?

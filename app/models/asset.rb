@@ -15,11 +15,13 @@ class Asset < ActiveRecord::Base
                       end
                     end,
                     content_type: %w(image/jpeg image/gif image/png application/pdf),
+                    filename_cleaner: Paperclip::TransliterateFilenameCleaner.new(Paperclip::Attachment.default_options[:restricted_characters]),
                     use_timestamp: false
 
-  validates_attachment_file_name :asset, matches: [/png\Z/i, /jpe?g\Z/i, /gif\Z/i, /pdf\Z/i]
+  validates_attachment_file_name :asset, matches: [/png\Z/, /jpe?g\Z/, /gif\Z/, /pdf\Z/]
   validate :validate_asset_file_name
 
+  default_scope -> { order(asset_updated_at: :desc) }
   scope :for_month, ->(date) { where(asset_updated_at: date.utc.beginning_of_month..date.utc.end_of_month) }
 
   Paperclip.interpolates :updated_at_path do |attachment, _|

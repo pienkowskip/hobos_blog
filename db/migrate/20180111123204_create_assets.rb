@@ -1,5 +1,5 @@
 class CreateAssets < ActiveRecord::Migration
-  def self.up
+  def change
     create_table :assets do |t|
       t.string   :asset_file_name
       t.string   :asset_content_type
@@ -8,13 +8,6 @@ class CreateAssets < ActiveRecord::Migration
       t.datetime :created_at
       t.datetime :updated_at
     end
-
-    change_column :users, :administrator, :boolean, :default => false
-  end
-
-  def self.down
-    change_column :users, :administrator, :boolean, default: false
-
-    drop_table :assets
+    add_index :assets, [:asset_updated_at]
   end
 end

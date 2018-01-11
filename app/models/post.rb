@@ -15,6 +15,8 @@ class Post < ActiveRecord::Base
   belongs_to :author, class_name: 'User', inverse_of: :posts
   belongs_to :category, inverse_of: :posts
 
+  default_scope -> { order(created_at: :desc) }
+
   # --- Permissions --- #
 
   def create_permitted?

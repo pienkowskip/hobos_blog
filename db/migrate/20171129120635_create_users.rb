@@ -1,5 +1,5 @@
-class InitialMigration < ActiveRecord::Migration
-  def self.up
+class CreateUsers < ActiveRecord::Migration
+  def change
     create_table :users do |t|
       t.string   :crypted_password, :limit => 40
       t.string   :salt, :limit => 40
@@ -14,9 +14,5 @@ class InitialMigration < ActiveRecord::Migration
       t.datetime :key_timestamp
     end
     add_index :users, [:state]
-  end
-
-  def self.down
-    drop_table :users
   end
 end

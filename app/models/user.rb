@@ -17,6 +17,8 @@ class User < ActiveRecord::Base
 
   has_many :posts, foreign_key: 'author_id', dependent: :restrict_with_exception, inverse_of: :author
 
+  default_scope -> { order(name: :asc) }
+
   # This gives admin rights and an :active state to the first sign-up.
   # Just remove it if you don't want that
   before_create do |user|
