@@ -1,0 +1,11 @@
+<show-page for="Post" without-description>
+  <field-list: fields="state, published_at, author" />
+
+  <append-content-body: replace>
+    <hr />
+    <%= this.excerpt.try(:html_safe) %>
+    <hr />
+    <%= this.body.html_safe %>
+  </append-content-body>
+
+</show-page>

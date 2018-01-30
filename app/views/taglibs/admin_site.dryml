@@ -32,8 +32,8 @@
       <div class="span9"><single-field-list fields="category"/></div>
       <div class="span9"><single-field-list fields="published_at"/></div>
       <div class="span9"><single-field-list fields="author"/></div>
-      <div class="span9"><single-field-list fields="excerpt"/></div>
-      <div class="span9"><single-field-list fields="body"/></div>
+      <div class="span9"><single-field-list fields="markdown_excerpt"/></div>
+      <div class="span9"><single-field-list fields="markdown_body"/></div>
     </div>
   </field-list:>
 </old-form>
