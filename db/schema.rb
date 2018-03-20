@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180119125800) do
+ActiveRecord::Schema.define(version: 20180319222837) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,15 @@ ActiveRecord::Schema.define(version: 20180119125800) do
 
   add_index "assets", ["asset_updated_at"], name: "default_ordering_index_on_assets", order: {"asset_updated_at"=>:desc}, using: :btree
   add_index "assets", ["asset_updated_at"], name: "index_assets_on_asset_updated_at", using: :btree
+
+  create_table "captions", force: :cascade do |t|
+    t.string   "textid",     null: false
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "captions", ["textid"], name: "index_captions_on_textid", using: :btree
 
   create_table "categories", force: :cascade do |t|
     t.string "name", null: false

@@ -14,7 +14,7 @@ class Post < ActiveRecord::Base
   end
   attr_accessible :title, :published_at, :author, :author_id, :category, :category_id, :body, :markdown_body, :excerpt, :markdown_excerpt, :state
 
-  belongs_to :author, class_name: 'User', inverse_of: :posts
+  belongs_to :author, class_name: 'User', inverse_of: :posts, creator: true
   belongs_to :category, inverse_of: :posts
 
   validate :validate_markdown_fields
