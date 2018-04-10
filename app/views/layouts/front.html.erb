@@ -9,7 +9,12 @@
   <meta name="author" content="<%= caption('site.author') %>">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <title><%= caption('site.title') %></title>
+  <title>
+    <% if content_for?(:site_title_prefix) %>
+      <%= yield(:site_title_prefix) %> &ndash;
+    <% end %>
+    <%= caption('site.title') %>
+  </title>
 
   <%= stylesheet_link_tag    'front', media: 'all' %>
   <%= javascript_include_tag 'front' %>
@@ -18,7 +23,64 @@
 </head>
 <body>
 
+<header>
+  <div class="row">
+    <div class="twelve columns">
+      <div class="logo">
+        <%= link_to home_page_path do %>
+          <img alt="" src="images/logo.png">
+        <% end %>
+      </div>
+
+      <nav id="nav-wrap">
+        <a class="mobile-btn" href="#nav-wrap" title="<%= t('front.nav.show_nav') %>"><%= t('front.nav.show_nav') %></a>
+        <a class="mobile-btn" href="#" title="<%= t('front.nav.hide_nav') %>"><%= t('front.nav.hide_nav') %></a>
+        <ul id="nav" class="nav">
+          <%= nav_entry('front.nav.home', home_page_path, current_page?(controller: 'front/static', action: 'home')) %>
+          <%= nav_entry('front.nav.blog', 'blog', false) %>
+          <%= nav_entry('front.nav.portfolio', 'portfolio', false) %>
+          <%= nav_entry('front.nav.about', about_page_path, current_page?(controller: 'static', action: 'about')) %>
+          <%= nav_entry('front.nav.contact', contact_page_path, current_page?(controller: 'static', action: 'contact')) %>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
 <%= yield %>
+
+<footer>
+
+  <div class="row">
+    <div class="twelve columns">
+      <ul class="footer-nav">
+        <%= nav_entry('front.nav.home', home_page_path, current_page?(controller: 'front/static', action: 'home')) %>
+        <%= nav_entry('front.nav.blog', 'blog', false) %>
+        <%= nav_entry('front.nav.portfolio', 'portfolio', false) %>
+        <%= nav_entry('front.nav.about', about_page_path, current_page?(controller: 'static', action: 'about')) %>
+        <%= nav_entry('front.nav.contact', contact_page_path, current_page?(controller: 'static', action: 'contact')) %>
+      </ul>
+
+      <ul class="footer-social">
+        <% %w(facebook youtube instagram twitter google_plus rss).each do |social_type|
+          social_url = caption("social.#{social_type}.url") { nil }
+          if social_url %>
+            <li><a href="<%= social_url %>"><i class="fa fa-<%= social_type.dasherize %>"></i></a></li>
+          <% end end %>
+      </ul>
+
+      <ul class="copyright">
+        <li>Copyright &copy; 2018 <%= caption('site.author') %></li>
+        <li>Design by <a href="http://www.styleshout.com/">Styleshout</a></li>
+      </ul>
+
+    </div>
+
+    <div id="go-top" style="display: block;"><a title="<%= t('front.nav.back_to_top') %>" href="#"><%= t('front.nav.back_to_top') %></a></div>
+
+  </div>
+
+</footer>
 
 </body>
 </html>

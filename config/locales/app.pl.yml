@@ -1,0 +1,18 @@
+pl:
+  date:
+    formats:
+      default: '%Y-%m-%d'
+  time:
+    formats:
+      default: '%Y-%m-%d %H:%M'
+
+  front:
+    nav:
+      home: Start
+      blog: Blog
+      portfolio: Portfolio
+      about: O nas
+      contact: Kontakt
+      back_to_top: Powrót na górę
+      show_nav: Pokaż menu
+      hide_nav: Schowaj menu

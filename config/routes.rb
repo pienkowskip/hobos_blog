@@ -32,6 +32,8 @@ Rails.application.routes.draw do
 
   scope module: 'front' do
     get 'home' => 'static#home', as: 'home_page'
+    get 'about' => 'static#about', as: 'about_page'
+    get 'contact' => 'static#contact', as: 'contact_page'
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
