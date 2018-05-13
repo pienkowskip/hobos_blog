@@ -30,8 +30,10 @@
     <div class="row columns">
       <div class="span9"><single-field-list fields="title"/></div>
       <div class="span9"><single-field-list fields="category"/></div>
+      <div class="span9"><single-field-list fields="state"/></div>
       <div class="span9"><single-field-list fields="published_at"/></div>
       <div class="span9"><single-field-list fields="author"/></div>
+      <div class="span9"><single-field-list fields="picture"/></div>
       <div class="span9"><single-field-list fields="markdown_excerpt"/></div>
       <div class="span9"><single-field-list fields="markdown_body"/></div>
     </div>

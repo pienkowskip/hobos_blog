@@ -1,5 +1,5 @@
 <show-page for="Post" without-description>
-  <field-list: fields="state, published_at, author" />
+  <field-list: fields="state, published_at, author, picture" />
 
   <append-content-body: replace>
     <hr />

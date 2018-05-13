@@ -18,6 +18,8 @@ class Asset < ActiveRecord::Base
                     filename_cleaner: Paperclip::TransliterateFilenameCleaner.new(Paperclip::Attachment.default_options[:restricted_characters]),
                     use_timestamp: false
 
+  has_many :posts, foreign_key: 'picture_id', dependent: :restrict_with_exception, inverse_of: :picture
+
   validates_attachment_file_name :asset, matches: [/png\Z/, /jpe?g\Z/, /gif\Z/, /pdf\Z/]
   validate :validate_asset_file_name
 

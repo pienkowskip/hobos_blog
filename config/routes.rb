@@ -34,6 +34,7 @@ Rails.application.routes.draw do
     get 'home' => 'static#home', as: 'home_page'
     get 'about' => 'static#about', as: 'about_page'
     get 'contact' => 'static#contact', as: 'contact_page'
+    resources :posts, only: [:index, :show]
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

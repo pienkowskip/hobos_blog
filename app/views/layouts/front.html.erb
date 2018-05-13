@@ -16,9 +16,9 @@
     <%= caption('site.title') %>
   </title>
 
-  <%= stylesheet_link_tag    'front', media: 'all' %>
+  <%= stylesheet_link_tag 'front', media: 'all' %>
   <%= javascript_include_tag 'front' %>
-  <link rel="shortcut icon" href="favicon.ico" >
+  <%= favicon_link_tag 'favicon.ico' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -27,9 +27,7 @@
   <div class="row">
     <div class="twelve columns">
       <div class="logo">
-        <%= link_to home_page_path do %>
-          <img alt="" src="images/logo.png">
-        <% end %>
+        <%= link_to(image_tag('/images/logo.png', alt: caption('site.title'), title: t('front.nav.home')), home_page_path) %>
       </div>
 
       <nav id="nav-wrap">
@@ -37,7 +35,7 @@
         <a class="mobile-btn" href="#" title="<%= t('front.nav.hide_nav') %>"><%= t('front.nav.hide_nav') %></a>
         <ul id="nav" class="nav">
           <%= nav_entry('front.nav.home', home_page_path, current_page?(controller: 'front/static', action: 'home')) %>
-          <%= nav_entry('front.nav.blog', 'blog', false) %>
+          <%= nav_entry('front.nav.blog', posts_path, false) %>
           <%= nav_entry('front.nav.portfolio', 'portfolio', false) %>
           <%= nav_entry('front.nav.about', about_page_path, current_page?(controller: 'static', action: 'about')) %>
           <%= nav_entry('front.nav.contact', contact_page_path, current_page?(controller: 'static', action: 'contact')) %>

@@ -21,7 +21,7 @@ class CustomMarkdownRenderer < Redcarpet::Render::XHTML
       image_text = if asset.exists?(:medium)
                      image_tag(asset.url(:medium), alt: alt_text, title: title)
                    else
-                     ERB::Util::html_escape(asset.asset_file_name)
+                     ERB::Util::html_escape(asset.original_filename)
                    end
       link_to(image_text, asset.url)
     rescue => error

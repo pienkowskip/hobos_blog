@@ -12,9 +12,10 @@ class Post < ActiveRecord::Base
     markdown_excerpt :text
     timestamps
   end
-  attr_accessible :title, :published_at, :author, :author_id, :category, :category_id, :body, :markdown_body, :excerpt, :markdown_excerpt, :state
+  attr_accessible :title, :published_at, :author, :author_id, :category, :category_id, :picture, :picture_id, :body, :markdown_body, :excerpt, :markdown_excerpt, :state
 
   belongs_to :author, class_name: 'User', inverse_of: :posts, creator: true
+  belongs_to :picture, class_name: 'Asset', inverse_of: :posts
   belongs_to :category, inverse_of: :posts
 
   validate :validate_markdown_fields
@@ -22,6 +23,11 @@ class Post < ActiveRecord::Base
   before_save :update_html_from_markdown
 
   default_scope -> { order(created_at: :desc) }
+  scope :published, -> { where(state: 'published') }
+
+  def to_param
+    "#{id}-#{title.parameterize}"
+  end
 
   # --- Permissions --- #
 
