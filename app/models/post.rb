@@ -14,6 +14,8 @@ class Post < ActiveRecord::Base
   end
   attr_accessible :title, :published_at, :author, :author_id, :category, :category_id, :picture, :picture_id, :body, :markdown_body, :excerpt, :markdown_excerpt, :state
 
+  include OrderQuery
+
   belongs_to :author, class_name: 'User', inverse_of: :posts, creator: true
   belongs_to :picture, class_name: 'Asset', inverse_of: :posts
   belongs_to :category, inverse_of: :posts
@@ -22,6 +24,7 @@ class Post < ActiveRecord::Base
 
   before_save :update_html_from_markdown
 
+  order_query :published_at_order, [:published_at, :desc], [:id, :desc]
   default_scope -> { order(created_at: :desc) }
   scope :published, -> { where(state: 'published') }
 

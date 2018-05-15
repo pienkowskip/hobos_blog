@@ -1,1 +1,57 @@
-<%= @post.body.html_safe %>
+<% content_for(:site_title_prefix) { @post.title } %>
+
+<div id="page-title">
+  <div class="row">
+    <div class="ten columns centered text-center">
+      <%= caption('headers.blog').html_safe %>
+    </div>
+  </div>
+</div>
+
+<div class="content-outer">
+  <div id="page-content" class="row">
+    <div id="primary" class="twelve columns">
+      <article class="post">
+        <div class="entry-header cf">
+          <h1><%= @post.title %></h1>
+          <p class="post-meta">
+            <time class="date" datetime="<%= l(@post.published_at, format: :iso) %>">
+              <%= l(@post.published_at.to_date, format: :long) %>
+            </time>
+            /
+            <span><%= @post.author.name %></span>
+          </p>
+        </div>
+
+        <% if @post.picture && @post.picture.asset.exists?(:large) %>
+          <div class="post-thumb">
+            <% picture = @post.picture.asset %>
+            <%= image_tag(picture.url(:large), alt: picture.original_filename, title: @post.title) %>
+          </div>
+        <% end %>
+
+        <div class="post-content">
+          <%= @post.body.html_safe %>
+        </div>
+
+        <ul class="post-nav cf">
+          <!-- TODO: Anchor rel attribute (prev/next). -->
+          <% if @prev_post %>
+            <li class="prev">
+              <%= link_to(post_path(@prev_post)) do%>
+                <strong><%= t('front.nav.previous_post') %></strong> <%= @prev_post.title %>
+            <% end %>
+            </li>
+          <% end %>
+          <% if @next_post %>
+            <li class="next">
+              <%= link_to(post_path(@next_post)) do %>
+                <strong><%= t('front.nav.next_post') %></strong> <%= @next_post.title %>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </article>
+    </div>
+  </div>
+</div>
