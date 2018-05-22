@@ -1,11 +1,25 @@
 <show-page for="Post" without-description>
+  <custom-javascript:>
+    $(document).ready(function () {
+      $('.post-content').lightGallery({
+        selector: 'figure > a',
+        hideBarsDelay: 3000
+      });
+    });
+
+  </custom-javascript:>
+
   <field-list: fields="state, published_at, author, picture" />
 
   <append-content-body: replace>
     <hr />
-    <%= this.excerpt.try(:html_safe) %>
+    <div class="post-content">
+      <%= this.excerpt.try(:html_safe) %>
+    </div>
     <hr />
-    <%= this.body.html_safe %>
+    <div class="post-content">
+      <%= this.body.html_safe %>
+    </div>
   </append-content-body>
 
 </show-page>

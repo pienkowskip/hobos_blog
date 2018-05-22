@@ -35,17 +35,16 @@
         </div>
 
         <ul class="post-nav cf">
-          <!-- TODO: Anchor rel attribute (prev/next). -->
           <% if @prev_post %>
             <li class="prev">
-              <%= link_to(post_path(@prev_post)) do%>
+              <%= link_to(post_path(@prev_post), rel: 'prev') do%>
                 <strong><%= t('front.nav.previous_post') %></strong> <%= @prev_post.title %>
             <% end %>
             </li>
           <% end %>
           <% if @next_post %>
             <li class="next">
-              <%= link_to(post_path(@next_post)) do %>
+              <%= link_to(post_path(@next_post), rel: 'next') do %>
                 <strong><%= t('front.nav.next_post') %></strong> <%= @next_post.title %>
               <% end %>
             </li>
@@ -55,3 +54,12 @@
     </div>
   </div>
 </div>
+
+<script>
+    $(document).ready(function () {
+        $('.post-content').lightGallery({
+            selector: 'figure > a',
+            hideBarsDelay: 3000
+        });
+    });
+</script>

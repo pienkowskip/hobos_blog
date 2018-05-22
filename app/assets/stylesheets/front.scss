@@ -1,4 +1,9 @@
 /*
  *= require sparrow
+ *= require lightgallery.min
  *= require_tree ./front
 */
+
+.lg-image {
+  border-radius: 0;
+}

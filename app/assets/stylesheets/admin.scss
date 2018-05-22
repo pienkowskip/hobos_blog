@@ -11,6 +11,7 @@
  *= require hobo_jquery_ui
  *= require hobo_bootstrap_ui
  *= require jquery-ui/redmond
+ *= require lightgallery.min
  *= require_tree ./admin
 */
 
@@ -20,4 +21,8 @@ select.datetime {
 
 .edit-page textarea {
   height: 8em;
+}
+
+.lg-image {
+  border-radius: 0;
 }

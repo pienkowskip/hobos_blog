@@ -1,12 +1,20 @@
 .post {
 
-  .post-content a.more-link {
-    font-family: notosans-bold, sans-serif;
-    margin-left: 3px;
-    float: right;
-    i {
-      margin-left: 10px;
-      font-size: 14px;
+  .post-content {
+    figure {
+      text-align: center;
+    }
+    figcaption {
+      font-style: italic;
+    }
+    a.more-link {
+      font-family: notosans-bold, sans-serif;
+      margin-left: 3px;
+      float: right;
+      i {
+        margin-left: 10px;
+        font-size: 14px;
+      }
     }
   }
 

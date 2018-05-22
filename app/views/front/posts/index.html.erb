@@ -34,7 +34,7 @@
           <div class="post-content">
             <%
               post_excerpt = Nokogiri::HTML::fragment(post.excerpt)
-              last_child = post_excerpt.at_css('*:last-child')
+              last_child = post_excerpt.at_css('p:last-child')
               last_child = post_excerpt unless last_child
               last_child.add_child("\n" + link_to(t('front.nav.read_more') + content_tag(:i, nil, class: 'fa fa-arrow-circle-o-right'), post_path(post), class: 'more-link'))
               post_excerpt = post_excerpt.to_html
@@ -46,3 +46,12 @@
     </div>
   </div>
 </div>
+
+<script>
+    $(document).ready(function () {
+        $('.post-content').lightGallery({
+          selector: 'figure > a',
+          hideBarsDelay: 3000
+        });
+    });
+</script>

@@ -13,7 +13,10 @@ class CustomMarkdownRenderer < Redcarpet::Render::XHTML
     asset_id = begin
       Integer(link)
     rescue ArgumentError
-      return image_tag(link, alt: alt_text.to_s, title: title.to_s)
+      return content_tag(
+          :figure,
+          link_to(image_tag(link, alt: alt_text.to_s, title: title.to_s), link) +
+              (title ? "\n" + content_tag(:figcaption, title) : '').html_safe)
     end
     begin
       asset = Asset.find(asset_id)
@@ -23,7 +26,10 @@ class CustomMarkdownRenderer < Redcarpet::Render::XHTML
                    else
                      ERB::Util::html_escape(asset.original_filename)
                    end
-      link_to(image_text, asset.url)
+      content_tag(
+          :figure,
+          link_to(image_text, asset.url) +
+              (title ? "\n" + content_tag(:figcaption, title) : '').html_safe)
     rescue => error
       error_callback.call(error) if error_callback
       ERB::Util::html_escape('![%s](%s%s)' % [alt_text, link, title ? ' "' + title + '"' : nil])
