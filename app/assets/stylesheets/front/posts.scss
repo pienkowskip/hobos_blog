@@ -1,24 +1,54 @@
-.post {
-
-  .post-content {
-    figure {
-      text-align: center;
-    }
-    figcaption {
-      font-style: italic;
-    }
-    a.more-link {
-      font-family: notosans-bold, sans-serif;
-      margin-left: 3px;
-      float: right;
-      i {
-        margin-left: 10px;
-        font-size: 14px;
-      }
+.post-content {
+  figure {
+    text-align: center;
+  }
+  figcaption {
+    font-style: italic;
+  }
+  a.more-link {
+    font-family: notosans-bold, sans-serif;
+    margin-left: 3px;
+    float: right;
+    i {
+      margin-left: 10px;
+      font-size: 14px;
     }
   }
+  ul {
+    margin-left: 30px;
+    list-style: disc outside;
+  }
+}
 
+.post {
   .post-thumb img {
     width: 100%;
   }
 }
+
+#journal.search-results {
+  padding-top: 36px;
+
+  #sidebar {
+    padding: 0;
+
+    .widget {
+      margin: 0;
+    }
+  }
+
+  .entry-header .entry-title,
+  .entry .post-content {
+    padding-right: 20px;
+    text-align: justify;
+
+    mark {
+      background-color: #11ABB0;
+      color: #fff;
+      font-weight: bold;
+      padding-left: 1px;
+      padding-right: 1px;
+    }
+  }
+}
+

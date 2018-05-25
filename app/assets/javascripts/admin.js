@@ -13,5 +13,4 @@
 //= require hobo_jquery_ui
 //= require hobo_bootstrap_ui
 //= require lightgallery
-//= require jquery.mousewheel.min
 //= require_tree ./admin

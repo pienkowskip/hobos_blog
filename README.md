@@ -14,9 +14,11 @@
       bundle install --without development test
     ```
 
+3. Create database. Add fulltext search dictionary `bin/scripts/pg_hunspell_install.sh` &ndash; more info at: <https://github.com/lemonskyjwt/plpstgrssearch>.
+
 4. Configure `config/database.yml` and `config/secrets.yml`.
 
-5. Create/migrate database.
+5. Migrate database.
 
 6. Precompile and copy assets:
     ```

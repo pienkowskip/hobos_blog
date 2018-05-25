@@ -1,0 +1,49 @@
+<% content_for(:site_title_prefix) { '%s "%s"' % [t('front.search.results'), @search_query] } %>
+
+<div id="page-title">
+  <div class="row">
+    <div class="ten columns centered text-center">
+      <%= caption('headers.search').html_safe %>
+    </div>
+  </div>
+</div>
+
+<div id="journal" class="search-results">
+
+  <div class="row" id="sidebar">
+    <div class="twelve columns widget widget_search">
+      <%= render 'search_form' %>
+      <h1>
+        <% if @posts.empty? %>
+          <%= t('front.search.no_results') %> &ldquo;<%= @search_query %>&rdquo;.
+        <% else %>
+          <%= t('front.search.results') %> &ldquo;<%= @search_query %>&rdquo;:
+        <% end %>
+      </h1>
+    </div>
+  </div>
+
+  <div class="blog-entries">
+    <% @posts.each do |post| %>
+      <article class="row entry">
+        <div class="entry-header">
+          <div class="ten columns entry-title pull-right">
+            <h3><%= link_to(post.title, post_path(post)) %></h3>
+          </div>
+          <div class="two columns post-meta end">
+            <time class="post-date" datetime="<%= l(post.published_at, format: :iso) %>">
+              <%= l(post.published_at.to_date, format: :long) %>
+            </time>
+            <span class="dauthor"><%= post.author.name %></span>
+          </div>
+        </div>
+        <div class="ten columns offset-2 post-content">
+          <p>
+            <%= post.pg_search_highlight.html_safe %>
+            <%= link_to(t('front.nav.go_to_post') + content_tag(:i, nil, class: 'fa fa-arrow-circle-o-right'), post_path(post), class: 'more-link') %>
+          </p>
+        </div>
+      </article>
+    <% end %>
+  </div>
+</div>

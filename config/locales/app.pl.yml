@@ -21,5 +21,11 @@ pl:
       show_nav: Pokaż menu
       hide_nav: Schowaj menu
       read_more: Czytaj dalej
+      go_to_post: Zobacz post
       previous_post: Nowszy post
       next_post: Starszy post
+    search:
+      label: Wyszukiwanie
+      placeholder: Czego puszukujesz?
+      results: Wyniki wyszukiwania
+      no_results: Brak wyników wyszukiwania

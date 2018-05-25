@@ -15,6 +15,7 @@ class Post < ActiveRecord::Base
   attr_accessible :title, :published_at, :author, :author_id, :category, :category_id, :picture, :picture_id, :body, :markdown_body, :excerpt, :markdown_excerpt, :state
 
   include OrderQuery
+  include PgSearch
 
   belongs_to :author, class_name: 'User', inverse_of: :posts, creator: true
   belongs_to :picture, class_name: 'Asset', inverse_of: :posts
@@ -27,6 +28,9 @@ class Post < ActiveRecord::Base
   order_query :published_at_order, [:published_at, :desc], [:id, :desc]
   default_scope -> { order(created_at: :desc) }
   scope :published, -> { where(state: 'published') }
+  pg_search_scope :search_by_content,
+                  against: {title: 'A', excerpt: 'B', body: 'C'},
+                  using: {tsearch: Rails.configuration.pg_tsearch}
 
   def to_param
     "#{id}-#{title.parameterize}"

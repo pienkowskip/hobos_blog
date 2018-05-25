@@ -1,0 +1,9 @@
+<%= form_tag(search_posts_path, method: 'get', enforce_utf8: false) do %>
+  <%= text_field_tag(:query, @search_query,
+                     class: 'text-search',
+                     placeholder: t('front.search.placeholder'),
+                     onfocus: "this.placeholder = ''",
+                     onblur: "this.placeholder = '#{j(t('front.search.placeholder'))}'") %>
+  <%= submit_tag('', name: nil, class: 'submit-search') %>
+<% end %>
+

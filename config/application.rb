@@ -27,6 +27,20 @@ module HobosBlog
     config.i18n.fallbacks = [:en]
     config.i18n.default_locale = :pl
 
+    config.pg_tsearch = {
+        dictionary: 'polish',
+        prefix: true,
+        highlight: {
+            StartSel: '<mark>',
+            StopSel: '</mark>',
+            MinWords: 40,
+            MaxWords: 60,
+            ShortWord: 2,
+            FragmentDelimiter: '&hellip;',
+            MaxFragments: 2
+        }
+    }
+
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 
