@@ -4,4 +4,5 @@
       (this.asset.exists?(:medium) ? image_tag(this.asset.url(:medium)) : this.asset_file_name)
     end
   %></prepend-content-body:>
+  <field-list: fields="id, name, asset_file_size, asset_content_type, asset_updated_at" />
 </show-page>

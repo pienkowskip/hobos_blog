@@ -9,6 +9,7 @@ pl:
     formats:
       default: '%Y-%m-%d %H:%M'
       iso: '%FT%T%:z'
+      long: '%e %B %Y @ %H:%M'
 
   front:
     nav:

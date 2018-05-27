@@ -16,17 +16,17 @@
           <h1><%= @post.title %></h1>
           <p class="post-meta">
             <time class="date" datetime="<%= l(@post.published_at, format: :iso) %>">
-              <%= l(@post.published_at.to_date, format: :long) %>
+              <%= l(@post.published_at, format: :long) %>
             </time>
             /
             <span><%= @post.author.name %></span>
           </p>
         </div>
 
-        <% if @post.picture && @post.picture.asset.exists?(:large) %>
+        <% if @post.picture && @post.picture.asset.exists?(:medium) %>
           <div class="post-thumb">
             <% picture = @post.picture.asset %>
-            <%= image_tag(picture.url(:large), alt: picture.original_filename, title: @post.title) %>
+            <%= image_tag(picture.url(:medium), alt: picture.original_filename, title: @post.title) %>
           </div>
         <% end %>
 

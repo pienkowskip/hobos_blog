@@ -7,9 +7,9 @@ class Asset < ActiveRecord::Base
                     url: '/files/:updated_at_path/:basename-:style.:extension',
                     styles: ->(attachment) do
                       if attachment.content_type =~ /\Aimage\//
-                        {large: '1024x768>', medium: '640x480', small: '100x100>', thumb: '100x100#'}
+                        {medium: '640x800>', thumb: '160x160#'}
                       elsif attachment.content_type == 'application/pdf'
-                        {medium: ['640x480', :png], small: ['100x100>', :png], thumb: ['100x100#', :png]}
+                        {medium: ['640x800>', :png], thumb: ['160x160#', :png]}
                       else
                         {}
                       end
@@ -36,7 +36,7 @@ class Asset < ActiveRecord::Base
   attr_accessible :asset
 
   def asset_updated_at_path
-    asset_updated_at.utc.strftime('%Y/%d')
+    asset_updated_at.utc.strftime('%Y/%m')
   end
 
   def name
