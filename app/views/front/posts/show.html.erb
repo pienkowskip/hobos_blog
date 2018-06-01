@@ -51,6 +51,14 @@
           <% end %>
         </ul>
       </article>
+
+      <div id="comments">
+        <h3><%= t('front.comments.count', count: @post.comments.count) %></h3>
+        <ol class="commentlist">
+          <%= render partial: 'comment', collection: @post.comments %>
+        </ol>
+        <%= render partial: 'comment_form' %>
+      </div>
     </div>
 
     <div id="secondary" class="four columns end">
@@ -62,6 +70,25 @@
 </div>
 
 <script>
+    function gravatarProfileCallback(profile) {
+        var profile = profile.entry[0];
+        if(profile == null || profile.requestHash == null)
+            return;
+        console.log(profile);
+        $('#comments ol.commentlist > li')
+            .filter(function () {
+                return this.dataset.gravatarHash === profile.requestHash;
+            })
+            .each(function () {
+               var self = $(this);
+               var anchor = document.createElement('a');
+               anchor.href = profile.profileUrl;
+               anchor.title = '<%= j(t('front.comments.label.gravatar_profile')) %>: ' + profile.displayName;
+               self.find('.avatar > img').wrap(anchor);
+               self.find('.comment-info > cite').wrap(anchor);
+            });
+    }
+
     $(document).ready(function () {
         $('.post-content').lightGallery({
             selector: 'figure > a',

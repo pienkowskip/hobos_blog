@@ -10,6 +10,21 @@ pl:
       default: '%Y-%m-%d %H:%M'
       iso: '%FT%T%:z'
       long: '%e %B %Y @ %H:%M'
+  errors:
+    format: 'Pole "%{attribute}" %{message}.'
+    messages:
+      invalid: jest wypełnione niepoprawnie
+      blank: nie może być puste
+      present: musi zostać puste
+      too_long: jest za długie (maksymalnie %{count} znaków)
+  activerecord:
+    attributes:
+      comment:
+        guest_name: Imię i nazwisko / pseudonim
+        guest_email: Email
+        guest_website: Strona internetowa
+        body: Treść komentarza
+        post: Post
 
   front:
     nav:
@@ -30,3 +45,17 @@ pl:
       placeholder: Czego puszukujesz?
       results: Wyniki wyszukiwania
       no_results: Brak wyników wyszukiwania
+    comments:
+      count:
+        one: '%{count} komentarz'
+        few: '%{count} komentarze'
+        many: '%{count} komentarzy'
+        other: '%{count} komentarza'
+      label:
+        gravatar_profile: Profil Gravatar
+        add_comment: Napisz komentarz
+        comment_as: Komentujesz jako
+        email_note: Nie będzie widoczny.<br />Korzystamy z <a href="https://gravatar.com/">Gravatarów</a>.
+      form:
+        validation_errors: Wystąpiły problemy z następującymi polami formularza
+        submit: Skomentuj

@@ -14,5 +14,17 @@ module Front
         link_to t(label), path
       end
     end
+
+    def gravatar_hash(email)
+      Digest::MD5.hexdigest(email.strip.downcase)
+    end
+
+    def gravatar_avatar_url(email)
+      'https://www.gravatar.com/avatar/' + gravatar_hash(email) + '?' + {s: 50, d: 'blank'}.to_query
+    end
+
+    def gravatar_jsonp_url(email, callback)
+      'https://www.gravatar.com/' + gravatar_hash(email) + '.json?' + {callback: callback}.to_query
+    end
   end
 end

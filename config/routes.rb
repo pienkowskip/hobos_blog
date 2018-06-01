@@ -35,8 +35,13 @@ Rails.application.routes.draw do
     get 'about' => 'static#about', as: 'about_page'
     get 'contact' => 'static#contact', as: 'contact_page'
     resources :posts, only: [:index, :show] do
+      resources :comments, only: [:create]
       collection do
-        get 'search'
+        get :search
+      end
+      member do
+        post :comment
+        get :comment, to: redirect(path: '/posts/%{id}')
       end
     end
   end

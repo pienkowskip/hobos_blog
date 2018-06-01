@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email_address, :password, :password_confirmation, :current_password
 
   has_many :posts, foreign_key: 'author_id', dependent: :restrict_with_exception, inverse_of: :author
+  has_many :comments, foreign_key: 'author_id', dependent: :restrict_with_exception, inverse_of: :author
 
   default_scope -> { order(name: :asc) }
 

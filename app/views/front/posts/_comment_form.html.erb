@@ -1,0 +1,52 @@
+<div id="add-comment" class="respond">
+  <h3><%= t('front.comments.label.add_comment') %></h3>
+  <%= form_for(@comment, url: comment_post_path(@post, anchor: 'add-comment')) do |comment_form| %>
+    <% if @comment.errors.any? %>
+      <div class="validation-errors">
+        <%= t('front.comments.form.validation_errors') %>:
+        <ul>
+          <% @comment.errors.full_messages.each do |message| %>
+            <li><%=message%></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <% if logged_in? %>
+      <div class="bio">
+        <div class="avatar">
+          <%= image_tag(gravatar_avatar_url(current_user.email_address), class: 'avatar', alt: '') %>
+        </div>
+
+        <div class="comment-info">
+          <%= t('front.comments.label.comment_as') %>:<br />
+          <cite><%= current_user.name %></cite>
+        </div>
+      </div>
+    <% else %>
+      <div class="cf">
+        <%= comment_form.label :guest_name do %>
+          <%= t('activerecord.attributes.comment.guest_name') %> <span class="required">*</span>
+        <% end %>
+        <%= comment_form.text_field :guest_name %>
+      </div>
+      <div class="cf">
+        <%= comment_form.label :guest_email do %>
+          <%= t('activerecord.attributes.comment.guest_email') %> <span class="required">*</span>
+          <span><%= t('front.comments.label.email_note').html_safe %></span>
+        <% end %>
+        <%= comment_form.email_field :guest_email %>
+      </div>
+      <div class="cf">
+        <%= comment_form.label :guest_website %>
+        <%= comment_form.text_field :guest_website %>
+      </div>
+    <% end %>
+    <div class="message cf">
+      <%= comment_form.label :body do %>
+        <%= t('activerecord.attributes.comment.body') %> <span class="required">*</span>
+      <% end %>
+      <%= comment_form.text_area :body %>
+    </div>
+    <%= comment_form.submit t('front.comments.form.submit') %>
+  <% end %>
+</div>

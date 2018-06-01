@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180524195335) do
+ActiveRecord::Schema.define(version: 20180528135013) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,22 @@ ActiveRecord::Schema.define(version: 20180524195335) do
   end
 
   add_index "categories", ["name"], name: "default_ordering_index_on_categories", using: :btree
+
+  create_table "comments", force: :cascade do |t|
+    t.string   "guest_name"
+    t.string   "guest_email"
+    t.string   "guest_website"
+    t.text     "body",          null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at"
+    t.integer  "author_id"
+    t.integer  "post_id",       null: false
+  end
+
+  add_index "comments", ["author_id"], name: "index_comments_on_author_id", using: :btree
+  add_index "comments", ["created_at"], name: "default_ordering_index_on_comments", order: {"created_at"=>:desc}, using: :btree
+  add_index "comments", ["created_at"], name: "id_ordering_index_on_comments", using: :btree
+  add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
 
   create_table "posts", force: :cascade do |t|
     t.string   "title",                              null: false

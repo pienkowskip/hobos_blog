@@ -20,6 +20,7 @@ class Post < ActiveRecord::Base
   belongs_to :author, class_name: 'User', inverse_of: :posts, creator: true
   belongs_to :picture, class_name: 'Asset', inverse_of: :posts
   belongs_to :category, inverse_of: :posts
+  has_many :comments, -> { reorder(:created_at, :id) }, inverse_of: :post
 
   validate :validate_markdown_fields
 

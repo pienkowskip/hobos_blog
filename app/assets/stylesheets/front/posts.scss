@@ -52,3 +52,79 @@
   }
 }
 
+#comments {
+  .commentlist {
+    .avatar img {
+      background-image: image-url('guest.png');
+      background-size: contain;
+    }
+    a > cite {
+      text-decoration: underline;
+    }
+    a > cite:hover {
+      color: #838C95;
+    }
+  }
+  form {
+    .bio {
+      position: relative;
+      margin: 29px 0 54px 16.667%;
+      padding: 0;
+      .avatar {
+        position: absolute;
+        left: -50px;
+        display: block;
+        height: 50px;
+        width: 50px;
+        img {
+          margin-top: 6px;
+          height: 50px;
+          width: 50px;
+          border-radius: 100%;
+          background-image: image-url('guest.png');
+          background-size: contain;
+        }
+      }
+      .comment-info cite {
+        font: 16px/30px notosans-bold, sans-serif;
+        color: #454545;
+      }
+    }
+    .validation-errors {
+      color: #c00;
+      > ul {
+        margin-left: 30px;
+        list-style: disc outside;
+      }
+    }
+    .field_with_errors {
+      margin: 0;
+      input[type="text"], input[type="password"], input[type="email"], textarea, select {
+        background-color: #f0D9D9;
+        border: 1px solid red;
+      }
+      input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, textarea:focus, select:focus {
+        background-color: #604145;
+      }
+    }
+    input[type="text"], input[type="password"], input[type="email"], textarea, select {
+      padding: 14px 15px;
+      font-family: Arial, sans-serif;
+    }
+    label span {
+      font-size: 13px;
+    }
+    div {
+      margin: 8px 0 8px 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  #comments form .bio {
+    margin-left: 0;
+    .avatar {
+      display: none;
+    }
+  }
+}

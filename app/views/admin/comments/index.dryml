@@ -1,0 +1,5 @@
+<index-page>
+  <collection: fields="post, name, email, this, created_at, actions">
+    <this-view:><%= link_to(truncate(this.body, length: 160), admin_comment_path(this)) %></this-view>
+  </collection:>
+</index-page>

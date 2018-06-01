@@ -46,3 +46,13 @@
     <field-list: fields="asset"/>
   </old-form>
 </extend>
+
+<extend tag="form" for="Comment">
+<old-form merge>
+  <field-list:>
+    <author-view:>
+      <select-one include-none="true"/>
+    </author-view:>
+  </field-list:>
+</old-form>
+</extend>

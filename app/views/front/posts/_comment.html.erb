@@ -1,0 +1,28 @@
+<li id="comment-<%= comment.id %>" data-gravatar-hash="<%= gravatar_hash(comment.email) %>">
+  <div class="avatar">
+    <%= image_tag(gravatar_avatar_url(comment.email), class: 'avatar', alt: '') %>
+  </div>
+
+  <div class="comment-info">
+    <cite><%= comment.name %></cite>
+    <% if comment.guest_website %>
+      &ndash;
+      <%= link_to(comment.guest_website, comment.guest_website) %>
+    <% elsif comment.author %>
+      &ndash;
+      <%= link_to(caption('site.title'), root_path) %>
+    <% end %>
+
+    <div class="comment-meta">
+      <time class="comment-time" datetime="<%= l(comment.created_at, format: :iso) %>">
+        <%= l(comment.created_at, format: :long) %>
+      </time>
+    </div>
+  </div>
+
+  <div class="comment-text">
+    <%= simple_format(h(comment.body)) %>
+  </div>
+
+  <%= javascript_include_tag(gravatar_jsonp_url(comment.email, 'gravatarProfileCallback'), defer: 'defer') %>
+</li>
