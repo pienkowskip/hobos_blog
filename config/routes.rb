@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'front/static#home'
+  root to: 'front/posts#index'
 
   namespace :admin do
     root to: 'admin_site#index'
@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   end
 
   scope module: 'front' do
-    get 'home' => 'static#home', as: 'home_page'
+    # get 'home' => 'static#home', as: 'home_page'
     get 'about' => 'static#about', as: 'about_page'
     get 'contact' => 'static#contact', as: 'contact_page'
     resources :posts, only: [:index, :show] do

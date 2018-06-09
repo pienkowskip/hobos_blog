@@ -1,2 +1,8 @@
 <% content_for(:site_title_prefix) { t('front.nav.about') } %>
-<%= caption('static_sites.about').html_safe %>
+<% content_for(:site_header) { caption('headers.about').html_safe } %>
+
+<div class="content-outer">
+  <div id="page-content" class="row page">
+    <%= caption('static_sites.about').html_safe %>
+  </div>
+</div>

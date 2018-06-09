@@ -16,9 +16,23 @@
     <%= caption('site.title') %>
   </title>
 
+  <% caption('site.ga_tracking_id') do |ga_tracking_id| %>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=<%= ga_tracking_id %>"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', '<%= j(ga_tracking_id) %>');
+    </script>
+  <% end %>
+
   <%= stylesheet_link_tag 'front', media: 'all' %>
   <%= javascript_include_tag 'front' %>
-  <%= favicon_link_tag 'favicon.ico' %>
+  <% [192, 16, 32].each do |size| %>
+    <%= favicon_link_tag "favicon-#{size}x#{size}.png", type: 'image/png', sizes: "#{size}x#{size}" %>
+  <% end %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -27,42 +41,44 @@
   <div class="row">
     <div class="twelve columns">
       <div class="logo">
-        <%= link_to(image_tag('/images/logo.png', alt: caption('site.title'), title: t('front.nav.home')), home_page_path) %>
+        <%= link_to(image_tag('/images/logo.png', alt: caption('site.title'), title: t('front.nav.blog')), posts_path) %>
       </div>
 
       <nav id="nav-wrap">
         <a class="mobile-btn" href="#nav-wrap" title="<%= t('front.nav.show_nav') %>"><%= t('front.nav.show_nav') %></a>
         <a class="mobile-btn" href="#" title="<%= t('front.nav.hide_nav') %>"><%= t('front.nav.hide_nav') %></a>
         <ul id="nav" class="nav">
-          <%= nav_entry('front.nav.home', home_page_path, current_page?(controller: 'front/static', action: 'home')) %>
-          <%= nav_entry('front.nav.blog', posts_path, false) %>
-          <%= nav_entry('front.nav.portfolio', 'portfolio', false) %>
-          <%= nav_entry('front.nav.about', about_page_path, current_page?(controller: 'static', action: 'about')) %>
-          <%= nav_entry('front.nav.contact', contact_page_path, current_page?(controller: 'static', action: 'contact')) %>
+          <%= nav_entry('front.nav.blog', posts_path, controller: 'front/posts') %>
+          <%= nav_entry('front.nav.about', about_page_path, controller: 'front/static', action: 'about') %>
+          <%= nav_entry('front.nav.contact', contact_page_path,   controller: 'front/static', action: 'contact') %>
         </ul>
       </nav>
     </div>
   </div>
+
+  <% if content_for?(:site_header) %>
+    <div id="page-title" class="row">
+      <div class="nine columns text-center">
+        <%= yield(:site_header) %>
+      </div>
+    </div>
+  <% end %>
 </header>
 
 <%= yield %>
 
 <footer>
-
   <div class="row">
     <div class="twelve columns">
       <ul class="footer-nav">
-        <%= nav_entry('front.nav.home', home_page_path, current_page?(controller: 'front/static', action: 'home')) %>
-        <%= nav_entry('front.nav.blog', 'blog', false) %>
-        <%= nav_entry('front.nav.portfolio', 'portfolio', false) %>
-        <%= nav_entry('front.nav.about', about_page_path, current_page?(controller: 'static', action: 'about')) %>
-        <%= nav_entry('front.nav.contact', contact_page_path, current_page?(controller: 'static', action: 'contact')) %>
+        <%= nav_entry('front.nav.blog', posts_path, controller: 'front/posts') %>
+        <%= nav_entry('front.nav.about', about_page_path, controller: 'front/static', action: 'about') %>
+        <%= nav_entry('front.nav.contact', contact_page_path,   controller: 'front/static', action: 'contact') %>
       </ul>
 
       <ul class="footer-social">
         <% %w(facebook youtube instagram twitter google_plus rss).each do |social_type|
-          social_url = caption("social.#{social_type}.url") { nil }
-          if social_url %>
+          caption("social.#{social_type}.url") do |social_url| %>
             <li><a href="<%= social_url %>"><i class="fa fa-<%= social_type.dasherize %>"></i></a></li>
           <% end end %>
       </ul>
@@ -71,13 +87,12 @@
         <li>Copyright &copy; 2018 <%= caption('site.author') %></li>
         <li>Design by <a href="http://www.styleshout.com/">Styleshout</a></li>
       </ul>
-
     </div>
 
-    <div id="go-top" style="display: block;"><a title="<%= t('front.nav.back_to_top') %>" href="#"><%= t('front.nav.back_to_top') %></a></div>
-
+    <div id="go-top">
+      <a title="<%= t('front.nav.back_to_top') %>" href="#"><%= t('front.nav.back_to_top') %></a>
+    </div>
   </div>
-
 </footer>
 
 </body>

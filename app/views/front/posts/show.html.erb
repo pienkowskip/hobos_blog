@@ -1,12 +1,5 @@
 <% content_for(:site_title_prefix) { @post.title } %>
-
-<div id="page-title">
-  <div class="row">
-    <div class="ten columns centered text-center">
-      <%= caption('headers.blog').html_safe %>
-    </div>
-  </div>
-</div>
+<% content_for(:site_header) { caption('headers.blog').html_safe } %>
 
 <div class="content-outer">
   <div id="page-content" class="row">

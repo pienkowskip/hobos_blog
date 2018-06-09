@@ -3,14 +3,18 @@ module Front
     def caption(textid)
       caption = Caption.find_by_textid(textid)
       if caption && !caption.body.blank?
-        caption.body
+        block_given? ? yield(caption.body) : caption.body
       else
-        block_given? ? yield : textid
+        textid
       end
     end
 
-    def nav_entry(label, path, current_page)
-      content_tag(:li, class: current_page ? 'current' : nil) do
+    def nav_entry(label, path, current_page_options = {})
+      html_class = (controller_path == current_page_options[:controller] || current_page_options[:controller].nil?) &&
+          (action_name == current_page_options[:action] || current_page_options[:action].nil?) &&
+          !current_page_options.empty? ?
+                       'current' : nil
+      content_tag(:li, class: html_class) do
         link_to t(label), path
       end
     end

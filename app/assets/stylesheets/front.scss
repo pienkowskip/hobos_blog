@@ -4,11 +4,66 @@
  *= require_tree ./front
 */
 
+body {
+  text-align: justify;
+}
+
 .lg-image {
   border-radius: 0;
 }
 
+#nav-wrap {
+  font-size: 16px;
+}
+
+header {
+  height: auto;
+  min-height: 240px + 16px * 2;
+  .logo {
+    left: 16px;
+    top: 16px;
+    a {
+      width: auto;
+      height: auto;
+      img {
+        max-width: none;
+      }
+    }
+  }
+}
+
 #page-title {
-  padding-top: 28px;
-  padding-bottom: 36px;
+  background: none;
+  padding-top: 36px;
+  padding-bottom: 42px;
+  h1 { font: bold 42px/50px raleway, sans-serif; }
+  p { font: normal 16px/28px notosans, sans-serif; }
+  .columns { float: right; }
+}
+
+@media only screen and (max-width: 900px) {
+  #page-title {
+    padding-left: (100% / 12);
+    h1 { font: bold 38px/46px raleway, sans-serif; }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  header .logo {
+    position: static;
+    a {
+      margin: 10px;
+      img {
+        width: 180px;
+        max-width: 100%;
+      }
+    }
+  }
+  #page-title {
+    padding-top: 0;
+    padding-left: 0;
+    h1 { font: bold 36px/44px raleway, sans-serif; }
+    p { font: normal 15px/24px notosans, sans-serif; }
+    .columns { float: none; }
+  }
 }

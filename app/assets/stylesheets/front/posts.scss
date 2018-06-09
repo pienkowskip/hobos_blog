@@ -6,7 +6,8 @@
     font-style: italic;
   }
   a.more-link {
-    font-family: notosans-bold, sans-serif;
+    font-family: notosans, sans-serif;
+    font-weight: bold;
     margin-left: 3px;
     float: right;
     i {
@@ -21,6 +22,9 @@
 }
 
 .post {
+  .entry-header h1 {
+    text-align: left;
+  }
   .post-thumb img {
     width: 100%;
   }
@@ -40,7 +44,6 @@
   .entry-header .entry-title,
   .entry .post-content {
     padding-right: 20px;
-    text-align: justify;
 
     mark {
       background-color: #11ABB0;
@@ -86,7 +89,7 @@
         }
       }
       .comment-info cite {
-        font: 16px/30px notosans-bold, sans-serif;
+        font: bold 16px/30px notosans, sans-serif;
         color: #454545;
       }
     }

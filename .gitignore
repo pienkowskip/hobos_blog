@@ -24,6 +24,7 @@ config/hobo_routes.rb
 # configs
 /config/secrets.yml
 /config/database.yml
+/config/mailer.yml
 
 # precompiled assets
 /public/assets/*

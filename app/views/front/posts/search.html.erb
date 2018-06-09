@@ -1,12 +1,5 @@
 <% content_for(:site_title_prefix) { '%s "%s"' % [t('front.search.results'), @search_query] } %>
-
-<div id="page-title">
-  <div class="row">
-    <div class="ten columns centered text-center">
-      <%= caption('headers.search').html_safe %>
-    </div>
-  </div>
-</div>
+<% content_for(:site_header) { caption('headers.search').html_safe } %>
 
 <div id="journal" class="search-results">
 

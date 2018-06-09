@@ -16,7 +16,7 @@
 
 3. Create database. Add fulltext search dictionary `bin/scripts/pg_hunspell_install.sh` &ndash; more info at: <https://github.com/lemonskyjwt/plpstgrssearch>.
 
-4. Configure `config/database.yml` and `config/secrets.yml`.
+4. Configure `config/database.yml`, `config/secrets.yml` and `config/mailer.yml`.
 
 5. Migrate database.
 
