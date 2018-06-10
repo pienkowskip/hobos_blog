@@ -4,9 +4,9 @@
       $('.post-content').lightGallery({
         selector: 'figure > a',
         hideBarsDelay: 3000
+        speed: 400
       });
     });
-
   </custom-javascript:>
 
   <field-list: fields="state, published_at, author, picture" />

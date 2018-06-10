@@ -7,9 +7,13 @@ class Asset < ActiveRecord::Base
                     url: '/files/:updated_at_path/:basename-:style.:extension',
                     styles: ->(attachment) do
                       if attachment.content_type =~ /\Aimage\//
-                        {medium: '640x800>', thumb: '160x160#'}
+                        styles = {medium: '640x800>', thumb: '160x160#', large: "#{12 * 1024 ** 2}@>"} # large - 12 Mpix max.
+                        if attachment.content_type == 'image/jpeg' && attachment.size > 1024 ** 2
+                          styles[:large] = {geometry: styles[:large], convert_options: '-quality 75'}
+                        end
+                        styles
                       elsif attachment.content_type == 'application/pdf'
-                        {medium: ['640x800>', :png], thumb: ['160x160#', :png]}
+                        {medium: ['640x800>', :jpg], thumb: ['160x160#', :jpg]}
                       else
                         {}
                       end

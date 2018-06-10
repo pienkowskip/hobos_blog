@@ -1,8 +1,16 @@
 <show-page for="Asset">
+  <prepend-content-header:>
+    <a style="margin-left: 1em" class='btn pull-right btn-primary' action='new' to="&model" if='&can_create?'>
+      <ht key="asset.actions.new">New Asset</ht>
+    </a>
+  </prepend-content-header:>
   <prepend-content-body:><%=
-    link_to(this.asset.url) do
+    link_to(this.asset.url, class: 'span6 pull-right') do
       (this.asset.exists?(:medium) ? image_tag(this.asset.url(:medium)) : this.asset_file_name)
     end
   %></prepend-content-body:>
-  <field-list: fields="id, name, asset_file_size, asset_content_type, asset_updated_at" />
+  <field-list: class="span5" fields="id, name, asset_file_size, asset_content_type, asset_updated_at" />
+  <heading:>
+    Asset #<%= this.id %><br /><small><name/></small>
+  </heading:>
 </show-page>

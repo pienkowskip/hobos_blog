@@ -6,8 +6,11 @@
 
 2. Install libs:
     ```
-      sudo apt-get install libpq-dev 
+      sudo apt-get install libpq-dev imagemagick ghostscript
     ```
+    * `libpq-dev` - some postgres lib
+    * `imagemagick` - paperclip image processor
+    * `ghostscript` - paperclip pdf attachments
 
 3. Install gems:
     ```

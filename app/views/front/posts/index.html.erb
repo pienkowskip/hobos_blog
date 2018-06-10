@@ -17,7 +17,7 @@
             </p>
           </div>
 
-          <% if post.picture && post.picture.asset.exists?(:medium) # TODO: Think about separate size class. %>
+          <% if post.picture && post.picture.asset.exists?(:medium) # TODO: Think about separate size class.  %>
             <div class="post-thumb">
               <% picture = post.picture.asset %>
               <%= link_to(image_tag(picture.url(:medium), alt: picture.original_filename, title: post.title), post_path(post)) %>
@@ -31,11 +31,11 @@
               last_child = post_excerpt unless last_child
               last_child.add_child("\n" + link_to(t('front.nav.read_more') + content_tag(:i, nil, class: 'fa fa-arrow-circle-o-right'), post_path(post), class: 'more-link'))
               post_excerpt = post_excerpt.to_html
-              %>
+            %>
             <%= post_excerpt.html_safe %>
           </div>
         </article>
-    <% end %>
+      <% end %>
     </div>
 
     <div id="secondary" class="four columns end">
@@ -50,8 +50,9 @@
 <script>
     $(document).ready(function () {
         $('.post-content').lightGallery({
-          selector: 'figure > a',
-          hideBarsDelay: 3000
+            selector: 'figure > a',
+            hideBarsDelay: 3000,
+            speed: 400
         });
     });
 </script>
