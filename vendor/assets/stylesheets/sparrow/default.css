@@ -188,14 +188,14 @@ blockquote:before {
    font-size: 80px;
    line-height: 0px;
    margin: 0;
-   font-family: arial, sans-serif;
+   font-family: Arial, sans-serif;
 
    position: absolute;
    top:  30px;
 	left: 0;
 }
 blockquote p {
-   font-family: georgia, serif;
+   font-family: Georgia, notoserif, serif;
    font-style: italic;
    padding: 0;
    font-size: 18px;
@@ -231,7 +231,7 @@ blockquote cite a:visited { color: #8B9798; border: none }
 	opacity: 0.45;
 	position: absolute;
 	font-size: 80px;
-   font-family: Arial, Sans-Serif;
+   font-family: Arial, sans-serif;
 }
 .pull-quote:before {
 	content: "\201C";

@@ -1,6 +1,24 @@
+em, strong, b {
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
+}
+strong, b {
+  font-style: inherit;
+}
+blockquote p {
+  font-size: 17px;
+}
+
+.lg-sub-html {
+  line-height: normal;
+}
+
 .post-content {
   figure {
     text-align: center;
+    line-height: normal;
+    margin-bottom: 30px;
   }
   figcaption {
     font-style: italic;

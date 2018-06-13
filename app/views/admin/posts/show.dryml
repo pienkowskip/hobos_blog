@@ -3,7 +3,7 @@
     $(document).ready(function () {
       $('.post-content').lightGallery({
         selector: 'figure > a',
-        hideBarsDelay: 3000
+        hideBarsDelay: 3000,
         speed: 400
       });
     });
@@ -20,6 +20,6 @@
     <div class="post-content">
       <%= this.body.html_safe %>
     </div>
-  </append-content-body>
+  </append-content-body:>
 
 </show-page>
