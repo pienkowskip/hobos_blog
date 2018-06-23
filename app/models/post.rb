@@ -3,12 +3,12 @@ class Post < ActiveRecord::Base
   hobo_model # Don't put anything above this
 
   fields do
-    title            :string, :required, null: false
-    state            :string, :required, null: false, default: 'draft'
-    published_at     :datetime
-    body             :text, null: false
-    excerpt          :text
-    markdown_body    :text, :required, null: false
+    title :string, :required, null: false
+    state :string, :required, null: false, default: 'draft'
+    published_at :datetime
+    body :text, null: false
+    excerpt :text
+    markdown_body :text, :required, null: false
     markdown_excerpt :text
     timestamps
   end
@@ -57,8 +57,12 @@ class Post < ActiveRecord::Base
 
   private
 
+  def markdown_parser(renderer)
+    Redcarpet::Markdown.new(renderer, tables: true, autolink: true)
+  end
+
   def error_raising_renderer
-    @error_raising_renderer ||= Redcarpet::Markdown.new(CustomMarkdownRenderer.new { |error| raise error })
+    @error_raising_renderer ||= markdown_parser(CustomMarkdownRenderer.new { |error| raise error })
   end
 
   def update_html_from_markdown
@@ -69,8 +73,8 @@ class Post < ActiveRecord::Base
   def validate_markdown_fields
     [:markdown_body, :markdown_excerpt].each do |field|
       next unless public_send(:"#{field}_changed?")
-      renderer = CustomMarkdownRenderer.new { |error| errors.add(field, error.to_s) }
-      Redcarpet::Markdown.new(renderer).render(public_send(field))
+      markdown_parser(CustomMarkdownRenderer.new { |error| errors.add(field, error.to_s) })
+          .render(public_send(field))
     end
   end
 end
