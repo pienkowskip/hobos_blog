@@ -42,6 +42,7 @@ Rails.application.routes.draw do
       member do
         post :comment
         get :comment, to: redirect(path: '/posts/%{id}')
+        get :preview
       end
     end
   end

@@ -49,6 +49,8 @@ pl:
       placeholder: Czego puszukujesz?
       results: Wyniki wyszukiwania
       no_results: Brak wyników wyszukiwania
+    posts:
+      draft_alert: To jest tylko podgląd. Ten post jescze nie został opublikowany.
     comments:
       count:
         one: '%{count} komentarz'

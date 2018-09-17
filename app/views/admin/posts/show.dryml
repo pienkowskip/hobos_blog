@@ -11,6 +11,10 @@
 
   <field-list: fields="state, published_at, author, picture" />
 
+  <prepend-content-header:>
+    <%= link_to('Preview Post', preview_post_path(this), style: 'margin-left: 1em', class: 'btn pull-right', target: '_blank') %>
+  </prepend-content-header:>
+
   <append-content-body: replace>
     <hr />
     <div class="post-content">

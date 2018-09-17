@@ -20,6 +20,15 @@ module Front
       @comment = Comment.new
     end
 
+    def preview
+      raise AbstractController::ActionNotFound unless logged_in?
+      @post = Post.unscoped.find(params[:id])
+      unless @post.state == 'published' || current_user.administrator? || @post.author == current_user
+        raise ActionController::Forbidden
+      end
+      redirect_to preview_post_url(@post) unless params[:id] == @post.to_param
+    end
+
     def comment
       @post = collection.find(params[:id])
       @comment = Comment.new(params.require(:comment).permit(:guest_name, :guest_email, :guest_website, :body))

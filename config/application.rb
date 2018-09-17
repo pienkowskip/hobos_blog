@@ -46,5 +46,7 @@ module HobosBlog
 
     config.autoload_paths << Rails.root.join('lib')
     config.autoload_paths << Rails.root.join('app/lib')
+
+    config.action_dispatch.rescue_responses.merge!('ActionController::Forbidden' => :forbidden)
   end
 end
