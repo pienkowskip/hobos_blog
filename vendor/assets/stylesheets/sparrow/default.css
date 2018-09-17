@@ -136,7 +136,7 @@ html { font-size: 62.5%; }
 
 body {
    background: #fff;
-   font-family: notosans, sans-serif;
+   font-family: notosans, opensans, sans-serif;
    font-size: 15px;
    line-height: 30px;
 	color: #838C95;
@@ -151,7 +151,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
    color: #313131;
-	font-family: raleway, sans-serif;
+	font-family: raleway, opensans, sans-serif;
 }
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
 h1 { font-size: 42px; line-height: 48px; margin-bottom: 12px;}
@@ -165,15 +165,15 @@ h6 { font-size: 14px; line-height: 30px; }
 p { margin: 0 0 30px 0; }
 p img { margin: 0; }
 p.lead {
-   font: normal 20px/36px raleway, sans-serif;
+   font: normal 20px/36px raleway, opensans, sans-serif;
    margin-bottom: 18px;
    color: #9FA5AD;
 }
 
 /* for 'em' and 'strong' tags, font-size and line-height should be same with
 the body tag due to rendering problems in some browsers */
-em { font: italic 15px/30px notosans, sans-serif; }
-strong, b { font: bold 15px/30px notosans, sans-serif; }
+em { font: italic 15px/30px notosans, opensans, sans-serif; }
+strong, b { font: bold 15px/30px notosans, opensans, sans-serif; }
 small { font-size: 11px; line-height: inherit; }
 
 /*	Blockquotes */
@@ -188,7 +188,7 @@ blockquote:before {
    font-size: 80px;
    line-height: 0px;
    margin: 0;
-   font-family: Arial, sans-serif;
+   font-family: Arial, opensans, sans-serif;
 
    position: absolute;
    top:  30px;
@@ -231,7 +231,7 @@ blockquote cite a:visited { color: #8B9798; border: none }
 	opacity: 0.45;
 	position: absolute;
 	font-size: 80px;
-   font-family: Arial, sans-serif;
+   font-family: Arial, opensans, sans-serif;
 }
 .pull-quote:before {
 	content: "\201C";
@@ -252,7 +252,7 @@ blockquote cite a:visited { color: #8B9798; border: none }
 
 /* Abbreviations */
 abbr {
-   font-family: notosans, sans-serif;
+   font-family: notosans, opensans, sans-serif;
     font-weight: bold;
 	font-variant: small-caps;
 	text-transform: lowercase;
@@ -267,7 +267,7 @@ abbr:hover { cursor: help; }
 	margin: 0;
 	padding: 14px 6px 0 0;
 	font-size: 84px;
-	font-family: /* Copperplate */ raleway, sans-serif;
+	font-family: /* Copperplate */ raleway, opensans, sans-serif;
    line-height: 60px;
 	text-indent: 0;
 	background: transparent;
@@ -339,7 +339,7 @@ li p { }
 .stats-tabs li a {
 	display: inline-block;
 	font-size: 22px;
-	font-family: notosans, sans-serif;
+	font-family: notosans, opensans, sans-serif;
     font-weight: bold;
    border: none;
    color: #313131;
@@ -351,7 +351,7 @@ li p { }
 	display: block;
 	margin: 6px 0 0 0;
 	font-size: 13px;
-	font-family: notosans, sans-serif;
+	font-family: notosans, opensans, sans-serif;
     font-weight: normal;
    color: #8B9798;
 }
@@ -408,7 +408,7 @@ dd { margin: 0 0 0 20px; }
    padding: 0;
 }
 .pagination .page-numbers {
-   font: bold 15px/18px notosans, sans-serif;
+   font: bold 15px/18px notosans, opensans, sans-serif;
    display: inline-block;
    padding: 6px 10px;
    margin-right: 3px;
@@ -460,7 +460,7 @@ button,
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
-   font: bold 16px/30px notosans, sans-serif;
+   font: bold 16px/30px notosans, opensans, sans-serif;
    background: #11ABB0;
    display: inline-block;
 	text-decoration: none;
@@ -566,7 +566,7 @@ textarea { min-height: 200px; }
 
 label,
 legend {
-   font: bold 16px/24px notosans, sans-serif;
+   font: bold 16px/24px notosans, opensans, sans-serif;
 	margin: 12px 0;
    color: #3d4145;
    display: block;
@@ -574,7 +574,7 @@ legend {
 label span,
 legend span {
 	color: #8B9798;
-   font: normal 14px/24px notosans, sans-serif;
+   font: normal 14px/24px notosans, opensans, sans-serif;
 }
 
 input[type="checkbox"],

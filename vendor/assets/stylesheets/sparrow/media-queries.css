@@ -15,7 +15,7 @@
 
    /* page title
    -------------------------------------------------------------------- */
-   #page-title h1 { font: bold 46px/60px raleway, sans-serif; }
+   #page-title h1 { font: bold 46px/60px raleway, opensans, sans-serif; }
 
    #page-content { width: 80%; }
 
@@ -49,7 +49,7 @@
 
    /* intro section - main page
    -------------------------------------------------------------------- */
-   .slider-text h1 { font: bold 46px/60px raleway, sans-serif; }
+   .slider-text h1 { font: bold 46px/60px raleway, opensans, sans-serif; }
 
    /* journal section - main page
    -------------------------------------------------------------------- */
@@ -213,14 +213,14 @@
       color:#C0C0C0;
       font-weight: bold;
       font-size: 13px;
-      font: normal 13px/27px raleway, sans-serif;
+      font: normal 13px/27px raleway, opensans, sans-serif;
       line-height: 30px; /* should be the same with li's height */
    }
 
    /* page title
    -------------------------------------------------------------------- */
-   #page-title h1 { font: bold 38px/48px raleway, sans-serif; }
-   #page-title p { font: normal 16px/30px notosans, sans-serif; }
+   #page-title h1 { font: bold 38px/48px raleway, opensans, sans-serif; }
+   #page-title p { font: normal 16px/30px notosans, opensans, sans-serif; }
 
    /* page content
    -------------------------------------------------------------------- */
@@ -232,7 +232,7 @@
    /* page
    -------------------------------------------------------------------- */
    .page h1,
-   .title-heading  { font: 700 32px/42px raleway, sans-serif; }
+   .title-heading  { font: 700 32px/42px raleway, opensans, sans-serif; }
    .page h1, .page p.lead { text-align: center; }
 
    /* intro section - main page
@@ -242,8 +242,8 @@
      margin-bottom: 30px;
      width: 95%;
    }
-   .slider-text h1 { font: bold 38px/48px raleway, sans-serif; }
-   .slider-text p { font: normal 15px/30px notosans, sans-serif; }
+   .slider-text h1 { font: bold 38px/48px raleway, opensans, sans-serif; }
+   .slider-text p { font: normal 15px/30px notosans, opensans, sans-serif; }
    .slides .slider-image { width: 100%; }
    .slides { overflow: hidden; }
 
@@ -301,12 +301,12 @@
       width: 100%;
    }
    .tweeter-icon { font-size: 54px; }
-   #tweets #twitter li span { font: 700 21px/42px raleway, sans-serif; }
-   #tweets #twitter li b a { font: normal 15px/30px notosans, sans-serif; }
+   #tweets #twitter li span { font: 700 21px/42px raleway, opensans, sans-serif; }
+   #tweets #twitter li b a { font: normal 15px/30px notosans, opensans, sans-serif; }
 
    /* Blog Post
    ------------------------------------------------------------------ */
-   .post .entry-header h1 { font: 700 32px/42px raleway, sans-serif; }
+   .post .entry-header h1 { font: 700 32px/42px raleway, opensans, sans-serif; }
 
     /* bio */
    .post .bio { padding-top: 18px; }
@@ -395,7 +395,7 @@
 
    /* footer nav */
    footer .footer-nav {
-      font: bold 15px/42px raleway, sans-serif;
+      font: bold 15px/42px raleway, opensans, sans-serif;
       margin: 0;
       padding: 0 0 18px 0;
       text-align: center;
@@ -442,8 +442,8 @@
    /* intro section - main page
    ------------------------------------------------------------------------- */
    .slider-text { margin-top: 36px; margin-bottom: 27px; }
-   .slider-text h1 { font: bold 32px/42px raleway, sans-serif; }
-   .slider-text p { font: normal 14px/27px notosans, sans-serif; }
+   .slider-text h1 { font: bold 32px/42px raleway, opensans, sans-serif; }
+   .slider-text p { font: normal 14px/27px notosans, opensans, sans-serif; }
 
     /* journal section - main page
    ------------------------------------------------------------------------- */
@@ -453,8 +453,8 @@
    }
    /* tweets section - main page
    ----------------------------------------------------------------------- */
-   #tweets #twitter li span { font: 700 20px/39px raleway, sans-serif; }
-   #tweets #twitter li b a { font: normal 14px/24px notosans, sans-serif; }
+   #tweets #twitter li span { font: 700 20px/39px raleway, opensans, sans-serif; }
+   #tweets #twitter li b a { font: normal 14px/24px notosans, opensans, sans-serif; }
 
    footer { margin-top: 48px; }
 

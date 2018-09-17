@@ -32,19 +32,23 @@ header {
   }
 }
 
+p.lead {
+  color: inherit;
+}
+
 #page-title {
   background: none;
   padding-top: 36px;
   padding-bottom: 42px;
-  h1 { font: bold 42px/50px raleway, sans-serif; }
-  p { font: normal 16px/28px notosans, sans-serif; }
+  h1 { font: bold 42px/50px raleway, opensans, sans-serif; }
+  p { font: normal 16px/28px notosans, opensans, sans-serif; }
   .columns { float: right; }
 }
 
 @media only screen and (max-width: 900px) {
   #page-title {
     padding-left: (100% / 12);
-    h1 { font: bold 38px/46px raleway, sans-serif; }
+    h1 { font: bold 38px/46px raleway, opensans, sans-serif; }
   }
 }
 
@@ -62,8 +66,8 @@ header {
   #page-title {
     padding-top: 0;
     padding-left: 0;
-    h1 { font: bold 36px/44px raleway, sans-serif; }
-    p { font: normal 15px/24px notosans, sans-serif; }
+    h1 { font: bold 36px/44px raleway, opensans, sans-serif; }
+    p { font: normal 15px/24px notosans, opensans, sans-serif; }
     .columns { float: none; }
   }
 }

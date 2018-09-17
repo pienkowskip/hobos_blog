@@ -24,7 +24,7 @@ blockquote p {
     font-style: italic;
   }
   a.more-link {
-    font-family: notosans, sans-serif;
+    font-family: notosans, opensans, sans-serif;
     font-weight: bold;
     margin-left: 3px;
     float: right;
@@ -121,7 +121,7 @@ blockquote p {
         }
       }
       .comment-info cite {
-        font: bold 16px/30px notosans, sans-serif;
+        font: bold 16px/30px notosans, opensans, sans-serif;
         color: #454545;
       }
     }
@@ -144,7 +144,7 @@ blockquote p {
     }
     input[type="text"], input[type="password"], input[type="email"], textarea, select {
       padding: 14px 15px;
-      font-family: Arial, sans-serif;
+      font-family: Arial, opensans, sans-serif;
     }
     label span {
       font-size: 13px;

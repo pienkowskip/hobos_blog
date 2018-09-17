@@ -39,7 +39,7 @@ img { border-radius: 3px; }
    padding-bottom: 54px;
 }
 #page-title h1 {
-   font: bold 50px/60px raleway, sans-serif;
+   font: bold 50px/60px raleway, opensans, sans-serif;
    color: #fff;
    padding: 0;
    margin: 0 0 18px 0;
@@ -48,7 +48,7 @@ img { border-radius: 3px; }
 #page-title h1 span,
 #page-title a { color: #11ABB0; }
 #page-title p {
-   font: normal 17px/36px notosans, sans-serif;
+   font: normal 17px/36px notosans, opensans, sans-serif;
    padding: 0;
    margin: 12px 5% 0;
    color: #b4a9a9;
@@ -68,7 +68,7 @@ img { border-radius: 3px; }
    padding-bottom: 12px;
 }
 .page h1, .title-heading {
-   font: 700 39px/48px raleway, sans-serif;
+   font: 700 39px/48px raleway, opensans, sans-serif;
    margin-bottom: 18px;
 }
 
@@ -78,8 +78,7 @@ img { border-radius: 3px; }
    padding-left: 18px;
 }
 #sidebar h5 {
-   font: bold 18px/30px notosans, sans-serif;
-   font-weight: normal;
+   font: bold 18px/30px notosans, opensans, sans-serif;
    margin-bottom: 6px;
 }
 #sidebar .widget { margin-bottom: 24px; }
@@ -221,7 +220,7 @@ header .logo a {
 /* nav-wrap */
 #nav-wrap {
 	position: relative;
-   font: bold 14px raleway, sans-serif;
+   font: bold 14px raleway, opensans, sans-serif;
    float: right;
    margin-top: 36px;
    margin-right: 20px;
@@ -411,7 +410,7 @@ ul#nav ul li a {
    margin: 60px auto 36px auto;
 }
 .slider-text h1 {
-   font: bold 50px/60px raleway, sans-serif;
+   font: bold 50px/60px raleway, opensans, sans-serif;
    color: #fff;
    padding: 0;
    margin: 0 0 18px 0;
@@ -420,7 +419,7 @@ ul#nav ul li a {
 .slider-text h1 span,
 .slider-text a { color: #11ABB0; }
 .slider-text p {
-   font: normal 17px/36px notosans, sans-serif;
+   font: normal 17px/36px notosans, opensans, sans-serif;
    padding: 0;
    margin: 12px 8% 0;
    text-shadow: 0px 1px 2px rgba(0, 0, 0, .3);
@@ -495,7 +494,7 @@ ul#nav ul li a {
    padding-bottom: 42px;
 }
 #info h2 {
-  font: bold 18px/30px notosans, sans-serif;
+  font: bold 18px/30px notosans, opensans, sans-serif;
   color: #11ABB0;
   margin-bottom: 6px;
 }
@@ -516,7 +515,7 @@ ul#nav ul li a {
    border-bottom: 1px solid #E3E8E8;
 }
 #works h1 {
-   font: bold 20px/36px raleway, sans-serif;
+   font: bold 20px/36px raleway, opensans, sans-serif;
    margin-bottom: 36px;
    color: #A1A8AF;
 }
@@ -595,12 +594,12 @@ ul#nav ul li a {
 
 .portfolio-item .portfolio-item-meta { padding: 18px 0; }
 .portfolio-item .portfolio-item-meta h5 a {
-   font: bold 14px/18px notosans, sans-serif;
+   font: bold 14px/18px notosans, opensans, sans-serif;
    color: #11ABB0;
    margin-left: 7%;
 }
 .portfolio-item .portfolio-item-meta p {
-   font: normal 12px/18px notosans, sans-serif;
+   font: normal 12px/18px notosans, opensans, sans-serif;
    color: #c6c7c7;
    margin-bottom: 0;
    margin-left: 7%;
@@ -634,7 +633,7 @@ ul#nav ul li a {
 #journal a:hover, #journal a:focus { color: #313131; }
 
 #journal h1 {
-   font: bold 20px/36px raleway, sans-serif;
+   font: bold 20px/36px raleway, opensans, sans-serif;
    margin-bottom: 36px;
    color: #A1A8AF;
 }
@@ -655,7 +654,7 @@ ul#nav ul li a {
    margin-bottom: 6px;
 }
 #journal .entry-header .entry-title { padding-right: 16.66667%; }
-#journal .entry-header h3 { font: bold 31px/42px raleway, sans-serif; }
+#journal .entry-header h3 { font: bold 31px/42px raleway, opensans, sans-serif; }
 #journal .entry-header .permalink {
    position: absolute;
    top: 18px;
@@ -689,7 +688,7 @@ ul#nav ul li a {
 
 /* post meta */
 #journal .entry .post-meta   {
-   font: normal 15px/21px notosans, sans-serif;
+   font: normal 15px/21px notosans, opensans, sans-serif;
    margin-top: 12px;
    margin-bottom: 0;
    text-align: right;
@@ -699,7 +698,7 @@ ul#nav ul li a {
    display: block;
 }
 #journal .entry .post-meta time {
-   font-family: notosans, sans-serif;
+   font-family: notosans, opensans, sans-serif;
    font-weight: bold;
    text-transform: uppercase;
    letter-spacing: 1px;
@@ -710,10 +709,10 @@ ul#nav ul li a {
 /* post content */
 #journal .entry .post-content {  padding-right: 16.66667%; }
 #journal .entry .post-content p {
-   font: normal 16px/30px notosans, sans-serif;
+   font: normal 16px/30px notosans, opensans, sans-serif;
 }
 #journal .entry .post-content a.more-link {
-   font: bold 16px/30px notosans, sans-serif;
+   font: bold 16px/30px notosans, opensans, sans-serif;
    margin-left: 3px;
 }
 #journal .entry .post-content a.more-link i {
@@ -734,7 +733,7 @@ ul#nav ul li a {
    margin-top: 12px;
 }
 #call-to-action h1 {
-   font: bold 34px/42px raleway, sans-serif;
+   font: bold 34px/42px raleway, opensans, sans-serif;
    color: #E4E2E2;
    margin-bottom: 3px;
 }
@@ -751,7 +750,7 @@ ul#nav ul li a {
    color: #544A4A;
 }
 #call-to-action p span {
-	font-family: notosans, sans-serif;
+	font-family: notosans, opensans, sans-serif;
     font-weight: bold;
 	color: #DDD9D9;
 }
@@ -807,7 +806,7 @@ ul#nav ul li a {
    width: 100%;
 }
 .post .entry-header h1 {
-   font: 700 39px/48px raleway, sans-serif;
+   font: 700 39px/48px raleway, opensans, sans-serif;
    margin-bottom: 18px;
 }
 .post .entry-header h1 a,
@@ -816,7 +815,7 @@ ul#nav ul li a {
 .post .entry-header h1 a:focus { color: #11ABB0; }
 
 .post .post-meta {
-   font: normal 15px/24px notosans, sans-serif;
+   font: normal 15px/24px notosans, opensans, sans-serif;
 }
 .post .post-meta a,
 .post .post-meta a:visited { color: #AFB4BB; }
@@ -825,7 +824,7 @@ ul#nav ul li a {
 
 .post .post-meta .date {
    display: inline-block;
-   font: bold 15px/24px notosans, sans-serif;
+   font: bold 15px/24px notosans, opensans, sans-serif;
    color: #313131;
 }
 .post .post-meta .categories {
@@ -848,10 +847,10 @@ ul#nav ul li a {
 /* tags */
 .post .post-content .tags {
   margin-top: 18px;
-  font-family: notosans, sans-serif;
+  font-family: notosans, opensans, sans-serif;
 }
 .post .post-content .tags a {
-    font-family: notosans, sans-serif;
+    font-family: notosans, opensans, sans-serif;
     font-weight: bold;
 }
 
@@ -879,7 +878,7 @@ ul#nav ul li a {
    float: right;
 }
 .post .bio .about h5 {
-   font: bold 18px/30px notosans, sans-serif;
+   font: bold 18px/30px notosans, opensans, sans-serif;
    margin-bottom: 6px;
 }
 
@@ -888,7 +887,7 @@ ul#nav ul li a {
    margin: 24px 0;
    padding: 30px 0 0 0;
    border-top: 1px solid #E0E0E0;
-   font: normal 16px/30px notosans, sans-serif;
+   font: normal 16px/30px notosans, opensans, sans-serif;
 }
 .post-nav li {
    display: inline-block;
@@ -900,7 +899,7 @@ ul#nav ul li a {
 .post-nav li a { color: #9FA5AD;  }
 .post-nav li a:hover { color: #313131; }
 .post-nav li strong {
-   font: 900 16px/30px raleway, sans-serif;
+   font: 900 16px/30px raleway, opensans, sans-serif;
    text-transform: uppercase;
    color: #11ABB0;
    letter-spacing: 0.5px;
@@ -922,7 +921,7 @@ ul#nav ul li a {
    padding-bottom: 12px;
 }
 #comments h3 {
-   font: bold 20px/30px notosans, sans-serif;
+   font: bold 20px/30px notosans, opensans, sans-serif;
    margin-bottom: 6px;
 }
 
@@ -956,7 +955,7 @@ ol.commentlist {
   	border-radius: 100% 100% 100% 100%;
 }
 .commentlist li .comment-info cite {
-   font: bold 16px/30px notosans, sans-serif;
+   font: bold 16px/30px notosans, opensans, sans-serif;
    color: #454545;
 }
 .commentlist li .comment-info .comment-meta {
@@ -965,7 +964,7 @@ ol.commentlist {
    display: block;
 }
 .commentlist li .comment-info .comment-meta .reply {
-   font-family: notosans, sans-serif;
+   font-family: notosans, opensans, sans-serif;
    font-weight: bold;
 }
 .commentlist li .comment-info .comment-meta .sep {
@@ -996,7 +995,7 @@ ol.commentlist {
    margin-top: 36px;
 }
 #comments form label {
-   font: bold 16px/24px notosans, sans-serif;
+   font: bold 16px/24px notosans, opensans, sans-serif;
 	margin: 12px 0;
    padding-left: 24px;
    width: 41.66667%;
@@ -1048,11 +1047,11 @@ ol.commentlist {
    padding-right: 30px;
 }
 .portfolio .entry-excerpt {
-   font: normal 20px/36px raleway, sans-serif;
+   font: normal 20px/36px raleway, opensans, sans-serif;
    color: #9FA5AD;
 }
 .portfolio .entry-details h1 {
-   font: 700 30px/42px raleway, sans-serif;
+   font: 700 30px/42px raleway, opensans, sans-serif;
    margin-bottom: 18px;
 }
 .portfolio .portfolio-meta-list li {
@@ -1060,7 +1059,7 @@ ol.commentlist {
    margin-bottom: 12px;
 }
 .portfolio .portfolio-meta-list li span {
-   font-family: notosans, sans-serif;
+   font-family: notosans, opensans, sans-serif;
    font-weight: bold;
    display: block;
    color: #313131;
@@ -1089,7 +1088,7 @@ ol.commentlist {
 	margin-bottom: 12px;
 }
 #team-wrapper h5 {
-   font: bold 16px/24px notosans, sans-serif;
+   font: bold 16px/24px notosans, opensans, sans-serif;
 }
 #team-wrapper span {
    position: relative;
@@ -1182,7 +1181,7 @@ footer a:hover { color: #11ABB0; }
 
 /* footer nav */
 footer .footer-nav {
-   font: bold 18px/36px raleway, sans-serif;
+   font: bold 18px/36px raleway, opensans, sans-serif;
    margin: 0;
    padding: 0 0 24px 0;
    text-align: center;
@@ -1219,7 +1218,7 @@ footer .copyright {
     padding: 12px 0 0 0;
     text-align: center;
     font-size: 15px;
-    font: normal 14px/30px notosans, sans-serif;
+    font: normal 14px/30px notosans, opensans, sans-serif;
  }
 footer .copyright li {
     display: inline-block;

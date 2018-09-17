@@ -1,0 +1,113 @@
+@font-face {
+    font-family: 'raleway';
+    src: url('raleway/raleway-thin.eot');
+    src: url('raleway/raleway-thin.eot?#iefix') format('embedded-opentype'),
+         url('raleway/raleway-thin.woff') format('woff'),
+         url('raleway/raleway-thin.ttf') format('truetype'),
+         url('raleway/raleway-thin.svg#ralewaythin') format('svg');
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'raleway';
+    src: url('raleway/raleway-extralight.eot');
+    src: url('raleway/raleway-extralight.eot?#iefix') format('embedded-opentype'),
+         url('raleway/raleway-extralight.woff') format('woff'),
+         url('raleway/raleway-extralight.ttf') format('truetype'),
+         url('raleway/raleway-extralight.svg#ralewayextralight') format('svg');
+    font-weight: 200;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'raleway';
+    src: url('raleway/raleway-light.eot');
+    src: url('raleway/raleway-light.eot?#iefix') format('embedded-opentype'),
+         url('raleway/raleway-light.woff') format('woff'),
+         url('raleway/raleway-light.ttf') format('truetype'),
+         url('raleway/raleway-light.svg#ralewaylight') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'raleway';
+    src: url('raleway/raleway-regular.eot');
+    src: url('raleway/raleway-regular.eot?#iefix') format('embedded-opentype'),
+         url('raleway/raleway-regular.woff') format('woff'),
+         url('raleway/raleway-regular.ttf') format('truetype'),
+         url('raleway/raleway-regular.svg#ralewayregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'raleway';
+    src: url('raleway/raleway-medium.eot');
+    src: url('raleway/raleway-medium.eot?#iefix') format('embedded-opentype'),
+         url('raleway/raleway-medium.woff') format('woff'),
+         url('raleway/raleway-medium.ttf') format('truetype'),
+         url('raleway/raleway-medium.svg#ralewaymedium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'raleway';
+    src: url('raleway/raleway-semibold.eot');
+    src: url('raleway/raleway-semibold.eot?#iefix') format('embedded-opentype'),
+         url('raleway/raleway-semibold.woff') format('woff'),
+         url('raleway/raleway-semibold.ttf') format('truetype'),
+         url('raleway/raleway-semibold.svg#ralewaysemibold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'raleway';
+    src: url('raleway/raleway-bold.eot');
+    src: url('raleway/raleway-bold.eot?#iefix') format('embedded-opentype'),
+         url('raleway/raleway-bold.woff') format('woff'),
+         url('raleway/raleway-bold.ttf') format('truetype'),
+         url('raleway/raleway-bold.svg#ralewaybold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'raleway';
+    src: url('raleway/raleway-extrabold.eot');
+    src: url('raleway/raleway-extrabold.eot?#iefix') format('embedded-opentype'),
+         url('raleway/raleway-extrabold.woff') format('woff'),
+         url('raleway/raleway-extrabold.ttf') format('truetype'),
+         url('raleway/raleway-extrabold.svg#ralewaybold') format('svg');
+    font-weight: 800;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'raleway';
+    src: url('raleway/raleway-heavy.eot');
+    src: url('raleway/raleway-heavy.eot?#iefix') format('embedded-opentype'),
+         url('raleway/raleway-heavy.woff') format('woff'),
+         url('raleway/raleway-heavy.ttf') format('truetype'),
+         url('raleway/raleway-heavy.svg#ralewayheavy') format('svg');
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* FIXED for Font-Face Chrome Rendering */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+
+   @font-face {
+       font-family: 'raleway';
+       src: url('raleway/raleway-regular.svg#Raleway') format('svg');
+       font-weight: normal;
+   }
+
+   @font-face {
+   font-family: 'raleway';
+   src: url('raleway/raleway-semibold.svg#Raleway') format('svg');
+       font-weight: 600;
+   }
+
+   @font-face {
+       font-family: 'raleway';
+       src: url('raleway/raleway-bold.svg#Raleway') format('svg');
+       font-weight: 700;
+   }
+
+}
